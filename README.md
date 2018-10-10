@@ -16,6 +16,7 @@ However, I hope it gives a sense of how I might bootstrap and organize a project
 <hr>
 
 ### Dev Todo's
+- Limit number of API calls that can be made at once
 - Form validation on the city submission form
 - Javascript type checking (Flow)
 - Unit tests to test for basic logic, such as parsing forecasts
