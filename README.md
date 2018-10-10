@@ -2,6 +2,8 @@
 
 This is a simple web application that fetches the weather forecast from a city.
 
+<img src="https://github.com/antoniablair/weather/blob/master/screenshot.jpg" width="500">
+
 The project was boostrapped with `create-react-app` and then built out using React, Redux, React Router, 
 Thunk, and Aphrodite for styling. Right now it is set up as only one page, but one could easily add 
 more routes if necessary.
@@ -11,7 +13,7 @@ it a more full-fledged website.
 
 However, I hope it gives a sense of how I might bootstrap and organize a project. 😊
 
-!['screenshot'](https://github.com/antoniablair/weather/blob/master/screenshot.jpg)
+<hr>
 
 ### Dev Todo's
 - Form validation on the city submission form
