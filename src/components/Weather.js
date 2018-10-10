@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import colors from '../constants/colors';
 import { StyleSheet, css } from 'aphrodite';
 
+import Emoji from './Emoji';
 import Forecast from './Forecast';
 
 import {
@@ -13,8 +14,6 @@ import {
 const mapStateToProps = state => {
   return {
     ...state.weather,
-    ...state.gif
-
   }
 };
 
@@ -59,8 +58,12 @@ const styles = StyleSheet.create({
     }
   },
 
-  h1: {
+  largeFont: {
     fontSize: '38px',
+  },
+
+  inlineBlock: {
+    display: 'inline-block',
   },
 
   hover: {
@@ -84,7 +87,16 @@ class Weather extends Component {
   render() {
     return (
       <div className={css(styles.card)}>
-        <header><h1 className={css(styles.h1)}>☔ Weather Report ✌️</h1></header>
+        <header className={css([styles.largeFont, styles.inlineBlock])}>
+        <div>
+          <Emoji label='umbrella' symbol='☔' />
+          <h1 className={css([styles.largeFont, styles.inlineBlock])}>
+           Weather Report
+          </h1>
+          <Emoji label='peace' symbol='✌️' />
+        </div>
+
+        </header>
         <p>Enter the name of your city to get today's forecast.</p>
           <form onSubmit={this.submitForm(this.props.city)}>
             <div className={css(styles.margin15)}>
