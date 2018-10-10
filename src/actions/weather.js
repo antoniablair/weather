@@ -1,8 +1,7 @@
 import fetch from 'cross-fetch';
 import config from '../config';
-import json from '../fauxForecast.js';
 
-export const fetchWeatherForecast = (city) => dispatch => {
+export const weatherForecastRequest = (city) => dispatch => {
   dispatch({
     city: city,
     type: 'WEATHER_FORECAST_REQUEST',
@@ -10,8 +9,8 @@ export const fetchWeatherForecast = (city) => dispatch => {
   });
 };
 
-export const receiveWeatherForecast = (data) => dispatch => {
-  // TODO: Save to local storage
+export const weatherForecastReceive = (data) => dispatch => {
+  // TODO: Save forecast to local storage so that it can appear whenever user opens the page (if still right date)
   dispatch({
     weatherData: data,
     type: 'WEATHER_FORECAST_RECEIVE',
@@ -26,23 +25,22 @@ export const onChangeCity = (city) => dispatch => {
   })
 };
 
+export const fetchApiWeatherForecast = (city) => async (dispatch) => {
+  dispatch(weatherForecastRequest(city));
 
-export function fetchWeatherForecastApi(city) {
-  console.log(city);
-  return function (dispatch) {
-    dispatch(fetchWeatherForecast(city));
+  const weatherApiKey = config.weatherApiKey;
 
-    const weatherApiKey = config.weatherApiKey;
+  let response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${weatherApiKey}`);
 
-    // TODO: Delete his
-    console.log(json);
-    dispatch(receiveWeatherForecast(json));
-
-    // return fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${weatherApiKey}`)
-    //   .then(
-    //       // todo: Check for 200 or 404
-    //     response => response.json(),
-    //     error => console.log('An error occurred.', error)
-    //   ).then(json => { dispatch(receiveWeatherForecast(json)) });
+  if (!response || (!response.ok)) {
+    // TODO: Instead of throwing, dispatch an error to display to user, and clear input fields
+    throw new Error('Whoops! Try typing in another city.');
   }
+
+  if (response.ok) {
+    let json = await response.json();
+    dispatch(weatherForecastReceive(json));
+    return json;
+  }
+  throw new Error(response.status)
 };

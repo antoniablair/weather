@@ -1,6 +1,8 @@
 import React from 'react';
+import { forecast } from '../../styles/forecast.js';
 
 import { joinArrayGrammatically, initialCasePhrase } from '../../utils/textParsing';
+import {css} from 'aphrodite';
 
 const parseForecastList = (data) => {
   const weatherData = data;
@@ -13,12 +15,13 @@ const parseForecastList = (data) => {
   return forecasts;
 };
 
-const generateForecastPrediction = (data, city) => {
+const generateForecastPrediction = (data, locale) => {
   const forecasts = data;
+  const city = locale;
+
   const forecastString = joinArrayGrammatically(forecasts);
 
-  const prediction = `The forecast today for ${initialCasePhrase(city)} is: ${forecastString}.`;
-  return prediction;
+  return `The forecast today for ${initialCasePhrase(city)} is: ${forecastString}.`;
 };
 
 const Forecast = (props) => {
@@ -31,7 +34,7 @@ const Forecast = (props) => {
     const forecastPrediction = generateForecastPrediction(forecasts, city);
 
     return (
-      <div>
+      <div className={css(forecast.text)}>
         <p>{forecastPrediction}</p>
       </div>
     );

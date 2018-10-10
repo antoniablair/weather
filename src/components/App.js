@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Route, Switch, } from "react-router-dom";
 
 import Weather from './weather/Weather';
-import colors from "../constants/colors";
+import colors from "../styles/colors";
 
 /**
  * Manages all routes.
