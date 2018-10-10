@@ -16,14 +16,14 @@ export const weatherForecastReceive = (data) => dispatch => {
     weatherData: data,
     type: 'WEATHER_FORECAST_RECEIVE',
     weatherForecastLoading: false,
-  })
+  });
 };
 
 export const onChangeCity = (city) => dispatch => {
   dispatch({
     city,
     type: 'CITY_UPDATE',
-  })
+  });
 };
 
 export const fetchApiWeatherForecast = (city) => async (dispatch) => {

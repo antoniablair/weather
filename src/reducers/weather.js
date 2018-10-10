@@ -24,6 +24,6 @@ export default(state = initialState, action) => {
       city: action.city,
     };
     default:
-      return state
+      return state;
   }
 };

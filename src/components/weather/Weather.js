@@ -18,7 +18,7 @@ import {
 const mapStateToProps = state => {
   return {
     ...state.weather,
-  }
+  };
 };
 
 // TODO: Validate form and run more syntax checks before fetchApiWeatherForecast can be called
