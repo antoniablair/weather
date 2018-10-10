@@ -2,8 +2,9 @@
 
 This is a simple web application that fetches the weather forecast from a city.
 
-The project was created using React, Redux, React Router, Thunk, and Aphrodite for styling. 
-While right now it is set up as only one page, one could easily add more routes if necessary.
+The project was boostrapped with `create-react-app` and then built out using React, Redux, React Router, 
+Thunk, and Aphrodite for styling. Right now it is set up as only one page, but one could easily add 
+more routes if necessary.
 
 This is just in the beginning phases of a project, so I would still need to add several items to make
 it a more full-fledged website.
