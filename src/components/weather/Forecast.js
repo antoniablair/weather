@@ -1,8 +1,13 @@
 import React from 'react';
-import { forecast } from '../../styles/forecast.js';
 
+import { css } from 'aphrodite';
+
+import { forecast } from '../../styles/forecast.js';
 import { joinArrayGrammatically, initialCasePhrase } from '../../utils/textParsing';
-import {css} from 'aphrodite';
+
+/**
+ * Displays forecast results returned from weather API.
+ **/
 
 const parseForecastList = (data) => {
   const weatherData = data;
@@ -29,7 +34,6 @@ const Forecast = (props) => {
   const city = props.city;
 
   if (weatherData !== null) {
-
     const forecasts = parseForecastList(weatherData['weather']);
     const forecastPrediction = generateForecastPrediction(forecasts, city);
 

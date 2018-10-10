@@ -1,4 +1,5 @@
 import { StyleSheet } from 'aphrodite';
+
 import colors from './colors';
 
 export const styles = StyleSheet.create({

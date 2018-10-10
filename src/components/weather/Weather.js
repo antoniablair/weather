@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { css } from 'aphrodite';
 
+import { css } from 'aphrodite';
 import { styles } from '../../styles/generic.js';
 
 import Emoji from '../Emoji';
@@ -11,12 +11,17 @@ import {
   fetchApiWeatherForecast,
   onChangeCity, } from '../../actions/weather';
 
+/**
+ * Shows the weather search form and handles weather search logic.
+ **/
+
 const mapStateToProps = state => {
   return {
     ...state.weather,
   }
 };
 
+// TODO: Validate form and run more syntax checks before fetchApiWeatherForecast can be called
 const mapDispatchToProps = dispatch => ({
   fetchApiWeatherForecast: (city) => dispatch(fetchApiWeatherForecast(city)),
   onChangeCity: (city) => dispatch(onChangeCity(city)),

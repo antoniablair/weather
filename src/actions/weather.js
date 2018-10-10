@@ -1,4 +1,5 @@
 import fetch from 'cross-fetch';
+
 import config from '../config';
 
 export const weatherForecastRequest = (city) => dispatch => {
@@ -21,13 +22,12 @@ export const weatherForecastReceive = (data) => dispatch => {
 export const onChangeCity = (city) => dispatch => {
   dispatch({
     city,
-    type: 'UPDATE_CITY',
+    type: 'CITY_UPDATE',
   })
 };
 
 export const fetchApiWeatherForecast = (city) => async (dispatch) => {
   dispatch(weatherForecastRequest(city));
-
   const weatherApiKey = config.weatherApiKey;
 
   let response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${weatherApiKey}`);
@@ -42,5 +42,5 @@ export const fetchApiWeatherForecast = (city) => async (dispatch) => {
     dispatch(weatherForecastReceive(json));
     return json;
   }
-  throw new Error(response.status)
+  throw new Error(response.status);
 };

@@ -18,7 +18,7 @@ export default(state = initialState, action) => {
       weatherData: action.weatherData,
       weatherForecastLoading: action.weatherForecastLoading,
     };
-    case 'UPDATE_CITY':
+    case 'CITY_UPDATE':
       return {
       ...state,
       city: action.city,

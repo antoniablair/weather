@@ -14,9 +14,7 @@ export const joinArrayGrammatically = (arrayOfWords) => {
 };
 
 export const capitalizeWord = (word) => {
-  const uncapitalized = word;
-
-  const lower = uncapitalized.toLowerCase();
+  const lower = word.toLowerCase();
 
   return lower.charAt(0).toUpperCase() + lower.substr(1);
 };

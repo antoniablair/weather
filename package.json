@@ -27,5 +27,16 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "ajv": "^6.5.4",
+    "babel-eslint": "^9.0.0",
+    "eslint": "^2.13.1",
+    "eslint-config-react-app": "^3.0.3",
+    "eslint-plugin-dependencies": "^2.4.0",
+    "eslint-plugin-flowtype": "^2.50.3",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.11.1"
+  }
 }
