@@ -11,6 +11,7 @@ it a more full-fledged website.
 
 However, I hope it gives a sense of how I might bootstrap and organize a project. 😊
 
+!['screenshot'](https://github.com/antoniablair/weather/blob/master/screenshot.jpg)
 
 ### Dev Todo's
 - Form validation on the city submission form
