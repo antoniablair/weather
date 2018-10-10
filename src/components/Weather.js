@@ -10,12 +10,6 @@ import {
   onChangeCity,
   receiveWeatherForecast,} from '../actions/weather';
 
-import {
-  fetchFromGiphyApi,
-  gifReceive,
-  gifRequest,
-} from '../actions/gif';
-
 const mapStateToProps = state => {
   return {
     ...state.weather,
@@ -27,9 +21,6 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => ({
   fetchWeatherForecastApi: (city) => dispatch(fetchWeatherForecastApi(city)),
   onChangeCity: (city) => dispatch(onChangeCity(city)),
-  receiveWeatherForecast: () => dispatch(receiveWeatherForecast()),
-  fetchFromGiphyApi: (gifSearchTerm) => dispatch(gifSearchTerm),
-  gifReceive: () => dispatch(gifReceive),
 });
 
 
