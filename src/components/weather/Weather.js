@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import colors from '../constants/colors';
+import colors from '../../constants/colors';
 import { StyleSheet, css } from 'aphrodite';
 
-import Emoji from './Emoji';
+import Emoji from '../Emoji';
 import Forecast from './Forecast';
 
 import {
   fetchWeatherForecastApi,
   onChangeCity,
-  receiveWeatherForecast,} from '../actions/weather';
+  receiveWeatherForecast,} from '../../actions/weather';
 
 const mapStateToProps = state => {
   return {

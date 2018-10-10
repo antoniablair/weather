@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { joinArrayGrammatically, initialCasePhrase } from '../utils/textParsing';
+import { joinArrayGrammatically, initialCasePhrase } from '../../utils/textParsing';
 
 const parseForecastList = (data) => {
   const weatherData = data;
