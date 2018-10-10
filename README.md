@@ -8,7 +8,7 @@ as only one page, one could easily add more routes if necessary.
 This is in the beginning phases of a project, so I would still need to add several items to make
 it a more full-fledged website.
 
-However, I hope it gives a sense of how I might bootstrap and organize a project.
+However, I hope it gives a sense of how I might bootstrap and organize a project. 😊
 
 
 ### Dev Todo's
