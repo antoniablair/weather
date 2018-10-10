@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { joinArrayGrammatically, initialCasePhrase } from '../utils/textParsing';
+
 const parseForecastList = (data) => {
   const weatherData = data;
   let forecasts = [];
@@ -11,39 +13,11 @@ const parseForecastList = (data) => {
   return forecasts;
 };
 
-const joinArray = (arr) => {
-  let outStr = '';
-    if (arr.length === 1) {
-        outStr = arr[0];
-    } else if (arr.length === 2) {
-        outStr = arr.join(' and ');
-    } else if (arr.length > 2) {
-        outStr = arr.slice(0, -1).join(', ') + ', and ' + arr.slice(-1);
-    }
-    return outStr;
-};
-
-const capitalizeWord = (word) => {
-  let lower = word.toLowerCase();
-
-  return lower.charAt(0).toUpperCase() + lower.substr(1);
-};
-
-const initialCase = (city) => {
-  let words = [];
-
-  let substrings = city.split(' ');
-
-  substrings.forEach(s => words.push(capitalizeWord(s)));
-
-  return words.join(' ');
-};
-
 const generateForecastPrediction = (data, city) => {
   const forecasts = data;
-  const forecastString = joinArray(forecasts);
+  const forecastString = joinArrayGrammatically(forecasts);
 
-  const prediction = `The forecast today for ${initialCase(city)} is: ${forecastString}.`;
+  const prediction = `The forecast today for ${initialCasePhrase(city)} is: ${forecastString}.`;
   return prediction;
 };
 
